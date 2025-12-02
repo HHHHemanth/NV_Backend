@@ -1,0 +1,6 @@
+# .gitignore (add at repo root)
+.env
+*.env.local
+.env.*.local
+__pycache__/
+*.pyc
