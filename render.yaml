@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: nv-backend
+    env: python
+    region: oregon
+    plan: free
+    repo: <your-git-provider>/<your-repo> # not required in file; Render UI can connect repo
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
