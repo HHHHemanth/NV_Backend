@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 # Import routers from your modules
 from authenticate import router as auth_router 
+from realtimedata import router as realtime_router
 from parameter import router as parameter_router
 from timeDomain import router as timeseries_router
 from fft import router as fft_router
@@ -18,7 +19,8 @@ app.add_middleware(
 )
 
 # ---- REGISTER ROUTERS ----
-app.include_router(auth_router)    
+app.include_router(auth_router)  
+app.include_router(realtime_router)  
 app.include_router(parameter_router)
 app.include_router(timeseries_router)
 app.include_router(fft_router)
